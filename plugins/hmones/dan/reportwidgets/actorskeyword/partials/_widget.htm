@@ -1,0 +1,14 @@
+<div class="report-widget">
+    <h3>Actors by Keyword</h3>
+    <div
+        class="control-chart wrap-legend"
+        data-control="chart-bar"
+        data-height="200"
+        data-full-width="1">
+        <ul>
+            <?php foreach($keywords as $keyword):  ?>
+                <li> <?php echo $keyword->keyword; ?>  <span><?php echo $keyword->actors()->count(); ?></span></li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+</div>

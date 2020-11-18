@@ -1,0 +1,14 @@
+<div class="report-widget">
+    <h3>Actors by Gender</h3>
+    <div
+        class="control-chart centered wrap-legend"
+        data-control="chart-pie"
+        data-size="200"
+        data-center-text="100">
+        <ul>
+            <?php foreach($actors as $actor):  ?>
+                <li> <?php echo ucfirst($actor['gender']); ?>  <span><?php echo $actor['count']; ?></span></li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+</div>
