@@ -1,0 +1,6 @@
+plugin:
+    name: 'pkurg.sitecaptcha::lang.plugin.name'
+    description: 'pkurg.sitecaptcha::lang.plugin.description'
+    author: Vladimir
+    icon: oc-icon-check
+    homepage: ''

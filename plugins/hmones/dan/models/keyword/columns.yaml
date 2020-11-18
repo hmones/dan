@@ -1,0 +1,24 @@
+columns:
+    id:
+        label: Identifier
+        type: number
+        searchable: false
+        sortable: true
+    sphere:
+        label: Sphere
+        type: text
+        searchable: true
+        sortable: true
+    keyword:
+        label: Keyword
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'Created at'
+        type: datetime
+        sortable: true
+    updated_at:
+        label: 'Last Updated'
+        type: datetime
+        sortable: true

@@ -1,0 +1,15 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    title: Import actors
+    modelClass: Hmones\Dan\Models\ActorImport
+    list: $/hmones/dan/models/actor/import_export_columns.yaml
+    redirect: hmones/dan/actor
+
+export:
+    title: Export actors
+    modelClass: Hmones\Dan\Models\ActorExport
+    list: $/hmones/dan/models/actor/import_export_columns.yaml
+    redirect: hmones/dan/actor

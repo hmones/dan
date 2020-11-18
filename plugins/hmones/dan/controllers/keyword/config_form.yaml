@@ -1,0 +1,10 @@
+name: Keyword
+form: $/hmones/dan/models/keyword/fields.yaml
+modelClass: Hmones\Dan\Models\Keyword
+defaultRedirect: hmones/dan/keyword
+create:
+    redirect: 'hmones/dan/keyword/update/:id'
+    redirectClose: hmones/dan/keyword
+update:
+    redirect: hmones/dan/keyword
+    redirectClose: hmones/dan/keyword

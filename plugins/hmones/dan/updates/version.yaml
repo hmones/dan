@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table hmones_dan_keywords'
+    - builder_table_create_hmones_dan_keywords.php
+1.0.3:
+    - 'Created table hmones_dan_actors'
+    - builder_table_create_hmones_dan_actors.php
+1.0.4:
+    - 'Created table hmones_dan_actor_keyword'
+    - builder_table_create_hmones_dan_actor_keyword.php
+1.0.5:
+    - 'Updated table hmones_dan_keywords'
+    - builder_table_update_hmones_dan_keywords.php
+1.0.6:
+    - 'Updated table hmones_dan_actors'
+    - builder_table_update_hmones_dan_actors.php

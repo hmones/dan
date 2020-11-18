@@ -1,0 +1,15 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    title: Import keyword
+    modelClass: Hmones\Dan\Models\KeywordImport
+    list: $/hmones/dan/models/keyword/import_export_columns.yaml
+    redirect: hmones/dan/keyword
+
+export:
+    title: Export keyword
+    modelClass: Hmones\Dan\Models\KeywordExport
+    list: $/hmones/dan/models/keyword/import_export_columns.yaml
+    redirect: hmones/dan/keyword

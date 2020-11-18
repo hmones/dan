@@ -1,0 +1,53 @@
+fields:
+    sphere:
+        label: Sphere
+        options:
+            'Business and Future Work': 'Business and Future Work'
+            'Arts and Culture': 'Arts and Culture'
+            'Civic Participation': 'Civic Participation'
+            'Online Media and Journalism': 'Online Media and Journalism'
+            'Gender Equality and Inclusion': 'Gender Equality and Inclusion'
+        showSearch: true
+        span: auto
+        required: 1
+        type: dropdown
+    sphere_slug:
+        label: 'Shpere Slug'
+        options:
+            business-and-future-work: business-and-future-work
+            arts-and-culture: arts-and-culture
+            civic-participation: civic-participation
+            online-media-and-journalism: online-media-and-journalism
+            gender-equality-and-inclusion: gender-equality-and-inclusion
+        showSearch: true
+        span: auto
+        readOnly: 0
+        preset:
+            field: sphere
+            type: slug
+        attributes:
+            business-and-future-work: business-and-future-work
+            arts-and-culture: arts-and-culture
+            civic-participation: civic-participation
+            online-media-and-journalism: online-media-and-journalism
+            gender-equality-and-inclusion: gender-equality-and-inclusion
+        type: dropdown
+    keyword:
+        label: Keyword
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: 'Keyword Slug'
+        span: auto
+        readOnly: 1
+        required: 1
+        preset:
+            field: keyword
+            type: slug
+        type: text
+    comment:
+        label: Comment
+        span: full
+        size: small
+        type: textarea

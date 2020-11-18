@@ -1,0 +1,6 @@
+<img src="{{ __SELF__.getImg() }}" alt="captcha" class="captcha-img" data-refresh-config="{{ __SELF__.property('type') }}">
+
+{% if  __SELF__.property('showrefresh') == 'show'  %}
+<a class="refresh-captcha" id="refreshcaptcha"><i class="{{ __SELF__.property('iconclass') }}"></i></a>
+{% endif %}
+

@@ -1,0 +1,127 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        required: 1
+        type: text
+        comment: 'Name of individual or organization'
+    slug:
+        label: Slug
+        span: auto
+        readOnly: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    is_person:
+        label: 'Is this record representign a person?'
+        span: full
+        required: 1
+        type: switch
+    type:
+        label: 'Record Type'
+        options:
+            Individual: Individual
+            NGO: NGO
+            'Private Company': 'Private Company'
+            Event: Event
+            'Startup Ecosystem': 'Startup Ecosystem'
+            'International Cooperation': 'International Cooperation'
+            Initiative: Initiative
+            'Public Institution': 'Public Institution'
+            University: University
+            'Think Tank': 'Think Tank'
+            'Training provider': 'Training provider'
+            Other: Other
+        showSearch: true
+        span: auto
+        required: 1
+        type: dropdown
+    title:
+        label: Title
+        options:
+            Mr.: Mr.
+            Mrs.: Mrs.
+            Ms.: Ms.
+            Dr.: Dr.
+            Prof.: Prof.
+            Eng.: Eng.
+        showSearch: true
+        span: auto
+        type: dropdown
+    gender:
+        label: Gender
+        options:
+            male: Male
+            female: Female
+            other: Other
+        showSearch: true
+        span: auto
+        type: dropdown
+    country:
+        label: Country
+        showSearch: true
+        span: auto
+        required: 1
+        type: dropdown
+        options:
+            Egypt: Egypt
+    city:
+        label: City
+        showSearch: true
+        span: auto
+        required: 1
+        type: dropdown
+        options:
+            Cairo: Cairo
+    origin_country:
+        label: 'Country of Origin'
+        showSearch: true
+        span: auto
+        type: dropdown
+        comment: 'For diaspora'
+        options:
+            Egypt: Egypt
+    email:
+        label: Email
+        span: auto
+        required: 0
+        type: text
+    phone:
+        label: Phone
+        span: auto
+        type: text
+    linkedin:
+        label: Linkedin
+        span: auto
+        type: text
+    website:
+        label: Website
+        span: auto
+        type: text
+    description:
+        label: Description
+        size: small
+        span: full
+        type: richeditor
+    technology:
+        label: Technology
+        options:
+            AI: AI
+            Blockchain: Blockchain
+            '3D printing': '3D printing'
+        showSearch: true
+        span: auto
+        required: 1
+        type: dropdown
+    contact_context:
+        label: 'Contact Context'
+        span: auto
+        type: text
+    keywords:
+        label: Keywords
+        span: auto
+        mode: relation
+        separator: comma
+        nameFrom: keyword
+        type: taglist

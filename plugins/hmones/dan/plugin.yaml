@@ -1,0 +1,20 @@
+plugin:
+    name: 'hmones.dan::lang.plugin.name'
+    description: 'hmones.dan::lang.plugin.description'
+    author: hmones
+    icon: oc-icon-bar-chart
+    homepage: ''
+navigation:
+    keywords:
+        label: Database
+        url: hmones/dan/actor
+        icon: icon-align-justify
+        sideMenu:
+            actors:
+                label: Actors
+                url: hmones/dan/actor
+                icon: icon-users
+            keywords:
+                label: Keywords
+                url: hmones/dan/keyword
+                icon: icon-tags

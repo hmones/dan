@@ -1,0 +1,45 @@
+description = "Default layout"
+==
+<! DOCTYPE html>
+    <html>
+
+    <head>
+        <title>DAN network - Registration</title>
+        <link rel="stylesheet" href="{{'assets/dist/semantic.min.css'|theme}}" />
+        <script src="{{'assets/js/jquery-3.5.1.slim.min.js'|theme}}"></script>
+        <script src="{{'assets/dist/semantic.min.js'|theme}}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="{{'assets/images/favicon.png'|theme}}" type="image/png" sizes="32x32"> 
+    </head>
+    <body>
+        <div class="ui container">
+            <div class="ui padded basic segment">
+                <div class="ui stackable grid">
+                    <div class="three wide column segment">
+                        <img src="{{'assets/images/logo.png'|theme}}" alt="" class="ui small image"/>
+                    </div>
+                    <div class="right floated right aligned three wide column">
+                        <a href="/backend" class="ui right primary button">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% page %}
+        <br><br>
+        <div class="ui blue inverted basic segment" style="margin: 0px; padding-top:50px;padding-bottom:50px;">
+            <div class="ui blue container">
+                <div class="ui stackable grid">
+                    <div class="three wide column">
+                        <img class="ui small image" src="https://digitalarabia.network/media/site/3798852066-1594135297/dan_logo-white.svg" alt="">
+                    </div>
+                    <div class="thirteen wide right aligned middle aligned column">
+                        Copyrights reserved @ Global Project Partners e.V.
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% framework extras %}
+        {% scripts %}
+    </body>
+
+    </html>

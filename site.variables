@@ -1,0 +1,92 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+/*-------------------
+      Base Sizes
+--------------------*/
+
+/* This is the single variable that controls them all */
+@emSize   : 16px;
+
+/* The size of page text  */
+@fontSize : 16px;
+
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontName          : 'Cairo';
+@fontSmoothing     : antialiased;
+
+@headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont          : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+@googleFontName    : @fontName;
+@importGoogleFonts : true;
+@googleFontSizes   : '200,300,400,600,700,900';
+@googleSubset      : 'latin';
+
+@googleProtocol    : 'https://';
+@googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
+
+
+@bold              : bold;
+@normal            : normal;
+
+/*-------------------
+    Border Radius
+--------------------*/
+
+/* See Power-user section below
+   for explanation of @px variables
+*/
+
+@absoluteBorderRadius: 0px;
+
+@defaultBorderRadius: @absoluteBorderRadius;
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+@red              : #df4d3e;
+@grey             : #f5f5f5;
+@blue             : #07708c;
+@primary          : #07708c;
+
+
+/*-------------------
+      Borders
+--------------------*/
+
+@borderColor               : rgba(7, 112, 140, 0.15);
+@strongBorderColor         : rgba(7, 112, 140, 0.22);
+@internalBorderColor       : rgba(7, 112, 140, 0.1);
+@selectedBorderColor       : rgba(7, 112, 140, 0.35);
+@strongSelectedBorderColor : rgba(7, 112, 140, 0.5);
+@disabledBorderColor       : rgba(7, 112, 140, 0.5);
+
+@solidBorderColor          : @blue;
+@solidSelectedBorderColor  : @blue;
+
+/*-------------------
+    Focused Input
+--------------------*/
+
+/* Used on inputs, textarea etc */
+@focusedFormBorderColor: @blue;
+
+/* Used on dropdowns, other larger blocks */
+@focusedFormMutedBorderColor: @blue;
+
+/*-------------------
+      Page
+--------------------*/
+
+@pageOverflowX       : hidden;
+@linkColor           : @blue;
+@linkUnderline       : none;
+@linkHoverColor      : lighten( @linkColor, 5);

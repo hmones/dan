@@ -1,0 +1,4 @@
+title: Keyword
+modelClass: Hmones\Dan\Models\Keyword
+toolbar:
+    buttons: reorder_toolbar

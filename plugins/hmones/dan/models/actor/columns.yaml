@@ -1,0 +1,30 @@
+columns:
+    id:
+        label: Identified
+        type: number
+        sortable: true
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    type:
+        label: 'Record Type'
+        type: text
+        searchable: true
+        sortable: true
+    technology:
+        label: Technology
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'Created since'
+        type: timesince
+        searchable: false
+        sortable: true
+    updated_at:
+        label: 'Last updated'
+        type: datetime
+        searchable: false
+        sortable: true

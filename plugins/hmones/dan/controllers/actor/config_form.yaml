@@ -1,0 +1,10 @@
+name: Actor
+form: $/hmones/dan/models/actor/fields.yaml
+modelClass: Hmones\Dan\Models\Actor
+defaultRedirect: hmones/dan/actor
+create:
+    redirect: 'hmones/dan/actor/update/:id'
+    redirectClose: hmones/dan/actor
+update:
+    redirect: hmones/dan/actor
+    redirectClose: hmones/dan/actor

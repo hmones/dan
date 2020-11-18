@@ -1,0 +1,41 @@
+columns:
+    id:
+        label: ID
+    name:
+        label: Name
+    slug:
+        label: Slug
+    is_person:
+        label: 'Is this record a person? (0/1)'
+    type:
+        label: 'Record Type (Individual/NGO/Private Company/Event/Startup Ecosystem/International Cooperation/Initiative/Public Institution/University/Think Tank/Training provider)'
+    title:
+        label: 'Title (Mr./Mrs./Dr./Prof./Eng.)'
+    gender:
+        label: 'Gender (male/female/other)'
+    country:
+        label: Country
+    city:
+        label: City
+    origin_country:
+        label: 'Country of Origin'
+    email:
+        label: Email
+    phone:
+        label: Phone
+    linkedin:
+        label: Linkedin
+    website:
+        label: Website
+    description:
+        label: Description
+    technology:
+        label: 'Technology (AI/Blockchain/3D printing)'
+    contact_context:
+        label: 'Contact Context'
+    keywords:
+        label: 'Keywords (slugs separated by commas)'
+    created_at:
+        label: 'Created at'
+    updated_at:
+        label: 'Updated at'

@@ -1,0 +1,4 @@
+title: Actor
+modelClass: Hmones\Dan\Models\Actor
+toolbar:
+    buttons: reorder_toolbar

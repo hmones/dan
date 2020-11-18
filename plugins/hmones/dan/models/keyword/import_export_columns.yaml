@@ -1,0 +1,17 @@
+columns:
+    id:
+        label: ID
+    sphere:
+        label: 'Sphere (Business and Future Work/Arts and Culture/Civic Participation/Online Media and Journalism/Gender Equality and Inclusion)'
+    sphere_slug:
+        label: 'Sphere slug (business-and-future-work/arts-and-culture/civic-participation/online-media-and-journalism/gender-equality-and-inclusion)'
+    keyword:
+        label: Keyword
+    slug:
+        label: 'Keyword Slug'
+    comment:
+        label: Comment
+    created_at:
+        label: 'Created at'
+    updated_at:
+        label: 'Updated at'
