@@ -1,5 +1,6 @@
 # Composer ignores
 /vendor
+/public
 composer.phar
 composer.lock
 
