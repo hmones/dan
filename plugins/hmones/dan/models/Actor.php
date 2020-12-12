@@ -32,7 +32,18 @@ class Actor extends Model
 
     public function getKeywordsListAttribute()
     {
-        return $this->keywords()->pluck('slug');
+        return optional($this->keywords())->pluck('slug');
+    }
+
+    public function getKeywordsStringAttribute()
+    {
+        $keywords = optional($this->keywords_list)->toArray();
+        return $keywords ? $keywords:"No Keywords";
+    }
+
+    public function scopeType($query, $value)
+    {   
+        return $query->where('type',$value);
     }
 
 

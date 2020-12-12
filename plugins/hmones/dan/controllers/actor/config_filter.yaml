@@ -1,0 +1,28 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    type:
+        label: 'Record Type'
+        type: group
+        conditions: type in (:filtered)
+        options:
+            'Individual': 'Individual'
+            'Think Tank': 'Think Tank'
+            'Public Instituion': 'Public Institution'
+    technology:
+        label: Technology
+        type: group
+        conditions: technology in (:filtered)
+        options:
+            AI: AI
+            Blockchain: Blockchain
+    gender:
+        label: Gender
+        type: group
+        conditions: gender in (:filtered)
+        options:
+            male: Male
+            female: Female
+            other: Other

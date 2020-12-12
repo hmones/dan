@@ -41,4 +41,28 @@ class Plugin extends PluginBase
             ]
          ];
     }
+
+    public function registerPermissions()
+{
+    return [
+        'hmones.dan.widgets.actors_country' => [
+            'label' => 'View the actors country widget',
+            'tab' => 'Widgets',
+            'order' => 1,
+            'roles' => ['publisher']
+        ],
+        'hmones.dan.widgets.actors_keyword' => [
+            'label' => 'View the actors keyword widget',
+            'tab' => 'Widgets',
+            'order' => 2,
+            'roles' => ['publisher']
+        ],
+        'hmones.dan.widgets.actors_gender' => [
+            'label' => 'View the actors gender widget',
+            'tab' => 'Widgets',
+            'order' => 3,
+            'roles' => ['publisher']
+        ]
+    ];
+}
 }

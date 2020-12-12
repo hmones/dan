@@ -3,16 +3,29 @@ columns:
         label: Identified
         type: number
         sortable: true
-    name:
-        label: Name
-        type: text
-        searchable: true
-        sortable: true
     type:
         label: 'Record Type'
         type: text
         searchable: true
         sortable: true
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    gender:
+        label: Gender
+        type: text
+        sortable: true
+    country:
+        label: Country
+        type: text
+        searchable: true
+        sortable: true
+    keywords_string:
+        label: Keywords
+        type: text
+        sortable: false
     technology:
         label: Technology
         type: text
