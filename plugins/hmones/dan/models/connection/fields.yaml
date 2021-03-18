@@ -11,6 +11,7 @@ fields:
             extension: auto
         span: full
         type: fileupload
+        comment: 'Recommended image size 600x600px'
     title:
         label: Title
         options:
@@ -29,11 +30,12 @@ fields:
             Moderator: Moderator
             Speaker: Speaker
             Facilitator: Facilitator
-            Event: Event
+            Coordinator: Coordinator
             Expert: Expert
             Consultant: Consultant
             Partner: Partner
             Trainer: Trainer
+            Other: Other
         showSearch: true
         span: auto
         required: 1
@@ -82,6 +84,7 @@ fields:
         label: City
         span: auto
         type: text
+        comment: 'Be consistent with all city names e.g. Cairo'
     country:
         label: Country
         options:
@@ -597,10 +600,12 @@ fields:
         label: Linkedin
         span: auto
         type: text
+        comment: 'Example: https://www.linkedin.com/'
     website:
         label: Website
         span: auto
         type: text
+        comment: 'Example: https://www.google.com/'
     bio:
         label: Biography
         size: small
@@ -614,7 +619,7 @@ fields:
     portfolio:
         label: Portfolio
         mode: file
-        prompt: 'Upload a maximum of 2mb file'
+        prompt: 'Accepts pdf, doc and docx files with a maximum of 2mb'
         fileTypes: 'pdf,doc,docx'
         useCaption: true
         thumbOptions:
