@@ -1,0 +1,10 @@
+name: Connection
+form: $/hmones/dan/models/connection/fields.yaml
+modelClass: Hmones\Dan\Models\Connection
+defaultRedirect: hmones/dan/connection
+create:
+    redirect: 'hmones/dan/connection/update/:id'
+    redirectClose: hmones/dan/connection
+update:
+    redirect: hmones/dan/connection
+    redirectClose: hmones/dan/connection

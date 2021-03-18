@@ -15,3 +15,15 @@
 1.0.6:
     - 'Updated table hmones_dan_actors'
     - builder_table_update_hmones_dan_actors.php
+1.0.7:
+    - 'Updated table hmones_dan_actors'
+    - builder_table_update_hmones_dan_actors_2.php
+1.0.8:
+    - 'Created table hmones_dan_connections'
+    - builder_table_create_hmones_dan_connections.php
+1.0.9:
+    - 'Updated table hmones_dan_connections'
+    - builder_table_update_hmones_dan_connections.php
+1.0.10:
+    - 'Created table hmones_dan_connection_keyword'
+    - builder_table_create_hmones_dan_connection_keyword.php

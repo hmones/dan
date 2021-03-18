@@ -18,3 +18,7 @@ navigation:
                 label: Keywords
                 url: hmones/dan/keyword
                 icon: icon-tags
+            connections:
+                label: Connections
+                url: hmones/dan/connection
+                icon: icon-users

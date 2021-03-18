@@ -1,0 +1,44 @@
+columns:
+  id:
+    label: Identified
+    type: number
+    sortable: true
+  type:
+    label: 'Record Type'
+    type: text
+    searchable: true
+    sortable: true
+  first_name:
+    label: First Name
+    type: text
+    searchable: true
+    sortable: true
+  last_name:
+    label: First Name
+    type: text
+    searchable: true
+    sortable: true
+  gender:
+    label: Gender
+    type: text
+    searchable: true
+    sortable: true
+  country:
+    label: Country
+    type: text
+    searchable: true
+    sortable: true
+  keywords_string:
+    label: Keywords
+    type: text
+    sortable: false
+  created_at:
+    label: 'Created since'
+    type: timesince
+    searchable: false
+    sortable: true
+  updated_at:
+    label: 'Last updated'
+    type: datetime
+    searchable: false
+    sortable: true

@@ -1,28 +1,17 @@
 <?php namespace Hmones\Dan\Models;
 
 use Model;
+use October\Rain\Database\Traits\SoftDelete;
+use October\Rain\Database\Traits\Validation;
 
-/**
- * Model
- */
 class Keyword extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
-    
-    use \October\Rain\Database\Traits\SoftDelete;
+    use Validation;
 
-    protected $dates = ['deleted_at'];
+    use SoftDelete;
 
-    protected $guarded = [];
-    
-    /**
-     * @var string The database table used by the model.
-     */
     public $table = 'hmones_dan_keywords';
 
-    /**
-     * @var array Validation rules
-     */
     public $rules = [
     ];
 
@@ -30,6 +19,14 @@ class Keyword extends Model
         'actors' => [
             'Hmones\Dan\Models\Actor',
             'table' => 'hmones_dan_actor_keyword'
+        ],
+        'connections' => [
+            'Hmones\Dan\Models\Connection',
+            'table' => 'hmones_dan_connection_keyword'
         ]
     ];
+
+    protected $dates = ['deleted_at'];
+
+    protected $guarded = [];
 }
