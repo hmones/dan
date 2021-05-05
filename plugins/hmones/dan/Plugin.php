@@ -38,7 +38,14 @@ class Plugin extends PluginBase
                 'permissions' => [
                     'hmones.dan.widgets.actors_country',
                 ],
-            ]
+            ],
+            'Hmones\Dan\ReportWidgets\ActorsSphere' => [
+                'label'   => 'Actors by Sphere',
+                'context' => 'dashboard',
+                'permissions' => [
+                    'hmones.dan.widgets.actors_sphere',
+                ],
+            ],
          ];
     }
 

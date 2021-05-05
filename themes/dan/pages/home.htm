@@ -11,8 +11,13 @@ showrefresh = "show"
 ==
 
 <style>
-    label{
-        color:black !important;
+    label {
+        color: black !important;
+    }
+
+    div.ui.dropdown {
+        height: 50px !important;
+        line-height: inherit !important;
     }
 </style>
 <div class="ui container">
@@ -21,196 +26,208 @@ showrefresh = "show"
         <div class="sub header">Please fill in the information below and we will be in contact with you</div>
     </h1>
     {{ form_open({ request: 'onSubmit', class:'ui form' }) }}
-        {% if errors.count() > 0 %}
-            <div class="ui error message" style="display: block;">
-                <div class="header">Error in submitting form:</div>
-                <ul>
-                    {% for error in errors.all() %}
-                        <li>{{error}}</li>
+    {% if errors.count() > 0 %}
+    <div class="ui error message" style="display: block;">
+        <div class="header">Error in submitting form:</div>
+        <ul>
+            {% for error in errors.all() %}
+            <li>{{error}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {{form_token()}}
+    <div class="ui dividing header">
+        General information
+    </div>
+    <div class="ui inverted grey basic segment fields">
+        <div class="six wide required {{errors.has('actor.type')?'error':''}} field">
+            <label for="actor[type]">Registration type</label>
+            <input name="actor[is_person]" type="hidden" value="{{ form_value('actor.is_person', 0) }}"/>
+            <div class="ui selection dropdown" style="">
+                <input name="actor[type]" type="hidden" value="{{ form_value('actor.type') }}">
+                <i class="dropdown icon"></i>
+                <div class="default text">Registration type</div>
+                <div class="menu">
+                    <div class="item" data-value="Individual">Individual</div>
+                    <div class="item" data-value="NGO">NGO</div>
+                    <div class="item" data-value="Private Company">Private Company</div>
+                    <div class="item" data-value="Startup Ecosystem">Startup Ecosystem</div>
+                    <div class="item" data-value="International Cooperation">International Cooperation</div>
+                    <div class="item" data-value="Initiative">Initiative</div>
+                    <div class="item" data-value="Public Institution">Public Institution</div>
+                    <div class="item" data-value="University">University</div>
+                    <div class="item" data-value="Think Tank">Think Tank</div>
+                    <div class="item" data-value="Training provider">Training provider</div>
+                    <div class="item" data-value="Other">Other</div>
+                </div>
+            </div>
+        </div>
+        <div class="eleven wide field">
+            <label for="actor[company_name]">Name of institution/company (optional)</label>
+            <div class="ui input">
+                <input name="actor[company_name]" placeholder="Company name" type="text"/>
+            </div>
+        </div>
+    </div>
+    <div class="ui dividing header">
+        Contact information
+    </div>
+    <div class="ui inverted grey basic segment three fields">
+        <div class="required {{errors.has('actor.title')?'error':''}} field">
+            <label for="actor[title]">Title</label>
+            <div class="ui selection dropdown">
+                <input name="actor[title]" type="hidden" value="{{form_value('actor.title') }}">
+                <i class="dropdown icon"></i>
+                <div class="default text">Title</div>
+                <div class="menu">
+                    <div class="item" data-value="Mr.">Mr.</div>
+                    <div class="item" data-value="Mrs.">Mrs.</div>
+                    <div class="item" data-value="Ms.">Ms.</div>
+                    <div class="item" data-value="Dr.">Dr.</div>
+                    <div class="item" data-value="Prof.">Prof.</div>
+                    <div class="item" data-value="Eng.">Eng.</div>
+                    <div class="item" data-value="Other">Other</div>
+                </div>
+            </div>
+        </div>
+        <div class="required {{errors.has('actor.name')?'error':''}} field">
+            <input name="actor[slug]" type="hidden" value="{{form_value('actor.slug') }}"/>
+            <label for="actor[name]">Name</label>
+            <div class="ui input">
+                <input name="actor[name]" placeholder="Full Name ..." type="text"
+                       value="{{form_value('actor.name') }}"/>
+            </div>
+        </div>
+        <div class="required {{errors.has('actor.gender')?'error':''}} field">
+            <label for="actor[gender]">Gender</label>
+            <div class="ui selection dropdown">
+                <input name="actor[gender]" type="hidden" value="{{form_value('actor.gender') }}"/>
+                <i class="dropdown icon"></i>
+                <div class="default text">Gender</div>
+                <div class="menu">
+                    <div class="item" data-value="male">Male</div>
+                    <div class="item" data-value="female">Female</div>
+                    <div class="item" data-value="other">Other</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui inverted grey basic segment three fields">
+        <div class="required {{errors.has('actor.country')?'error':''}} field">
+            {% partial 'country' label='Country' fieldname='actor[country]' %}
+        </div>
+        <div class="required {{errors.has('actor.city')?'error':''}} field">
+            <label for="actor[city]">City</label>
+            <div class="ui input">
+                <input name="actor[city]" type="text" value="{{form_value('actor.city') }}"/>
+            </div>
+        </div>
+        <div class="{{errors.has('actor.origin_country')?'error':''}} field">
+            {% partial 'country' label='Country of origin' fieldname='actor[origin_country]' %}
+        </div>
+    </div>
+    <div class=" ui inverted grey basic segment four fields">
+        <div class="{{errors.has('actor.email')?'error':''}} field">
+            <label for="actor[email]">Email</label>
+            <input name="actor[email]" placeholder="Email ..." type="text" value="{{form_value('actor.email') }}"/>
+        </div>
+        <div class="{{errors.has('actor.phone')?'error':''}} field">
+            <label for="actor[phone]">Phone</label>
+            <input name="actor[phone]" placeholder="Phone ..." type="text" value="{{form_value('actor.phone') }}"/>
+        </div>
+        <div class="{{errors.has('actor.linkedin')?'error':''}} field">
+            <label for="actor[linkedin]">Linkedin</label>
+            <div class="ui left icon input">
+                <input name="actor[linkedin]" placeholder="Linkedin ..." type="text"
+                       value="{{form_value('actor.linkedin') }}"/>
+                <i class="linkedin icon"></i>
+            </div>
+        </div>
+        <div class="{{errors.has('actor.website')?'error':''}} field">
+            <label for="actor[website]">Website</label>
+            <div class="ui left icon input">
+                <input name="actor[website]" placeholder="Website ..." type="text"
+                       value="{{form_value('actor.website') }}"/>
+                <i class="globe icon"></i>
+            </div>
+        </div>
+    </div>
+    <div class="ui dividing header">
+        About you
+    </div>
+    <div class="ui inverted grey basic segment fluid {{errors.has('actor.description')?'error':''}} field">
+        <label for="actor[description]">Description</label>
+        <textarea cols="30" name="actor[description]" placeholder="Tell us more about yourself ..." rows="10"
+                  value="{{form_value('actor.description') }}"></textarea>
+    </div>
+    <div class="ui inverted grey basic segment two field">
+        <div class="{{errors.has('actor.technology')?'error':''}} field">
+            <label for="actor[technology]">Technology</label>
+            <div class="ui selection dropdown">
+                <input name="actor[technology]" type="hidden" value="{{form_value('actor.technology') }}"/>
+                <i class="dropdown icon"></i>
+                <div class="default text">Technology</div>
+                <div class="menu">
+                    <div class="item" data-value="AI">AI</div>
+                    <div class="item" data-value="Blockchain">Blockchain</div>
+                    <div class="item" data-value="3D printing">3D printing</div>
+                    <div class="item" data-value="Other">Other</div>
+                </div>
+            </div>
+        </div>
+        <div class="{{errors.has('keywords')?'error':''}} field">
+            <label for="keywords">Sectors you work in</label>
+            <div class="ui search multiple selection dropdown">
+                <input name="keywords" type="hidden" value="{{form_value('keywords') }}"/>
+                <i class="dropdown icon"></i>
+                <div class="default text">Sectors</div>
+                <div class="menu">
+                    {% for keyword in keywords %}
+                    <div class="item" data-value="{{keyword.id}}">{{keyword.keyword}}</div>
                     {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-        {{form_token()}}
-        <div class="ui dividing header">
-            General information
-        </div>
-        <div class="ui inverted grey basic segment fields">
-            <div class="four wide required {{errors.has('actor.type')?'error':''}} field">
-                <label for="actor[type]">Registration type</label>
-                <input type="hidden" name="actor[is_person]" value="{{ form_value('actor.is_person', 0) }}" />
-                <div class="ui selection dropdown">
-                    <input type="hidden" name="actor[type]" value="{{ form_value('actor.type') }}">
-                    <i class="dropdown icon"></i>
-                    <div class="default text">Registration type</div>
-                    <div class="menu">
-                      <div class="item" data-value="Individual">Individual</div>
-                      <div class="item" data-value="NGO">NGO</div>
-                      <div class="item" data-value="Private Company">Private Company</div>
-                      <div class="item" data-value="Startup Ecosystem">Startup Ecosystem</div>
-                      <div class="item" data-value="International Cooperation">International Cooperation</div>
-                      <div class="item" data-value="Initiative">Initiative</div>
-                      <div class="item" data-value="Public Institution">Public Institution</div>
-                      <div class="item" data-value="University">University</div>
-                      <div class="item" data-value="Think Tank">Think Tank</div>
-                      <div class="item" data-value="Training provider">Training provider</div>
-                      <div class="item" data-value="Other">Other</div>
-                    </div>
-                </div>
-            </div>
-            <div class="required {{errors.has('actor.title')?'error':''}} field">
-                <label for="actor[title]">Title</label>
-                <div class="ui selection dropdown">
-                    <input type="hidden" name="actor[title]" value="{{form_value('actor.title') }}">
-                    <i class="dropdown icon"></i>
-                    <div class="default text">Title</div>
-                    <div class="menu">
-                      <div class="item" data-value="Mr.">Mr.</div>
-                      <div class="item" data-value="Mrs.">Mrs.</div>
-                      <div class="item" data-value="Ms.">Ms.</div>
-                      <div class="item" data-value="Dr.">Dr.</div>
-                      <div class="item" data-value="Prof.">Prof.</div>
-                      <div class="item" data-value="Eng.">Eng.</div>
-                      <div class="item" data-value="Other">Other</div>
-                    </div>
-                </div>
-            </div>
-            <div class="six wide required {{errors.has('actor.name')?'error':''}} field">
-                <input type="hidden" name="actor[slug]" value="{{form_value('actor.slug') }}"/>
-                <label for="actor[name]">Name</label>
-                <div class="ui mini input">
-                    <input type="text" placeholder="Full Name ..." name="actor[name]" value="{{form_value('actor.name') }}"/>
-                </div>
-            </div>
-            <div class="four wide required {{errors.has('actor.gender')?'error':''}} field">
-                <label for="actor[gender]">Gender</label>
-                <div class="ui selection dropdown">
-                    <input type="hidden" name="actor[gender]" value="{{form_value('actor.gender') }}"/>
-                    <i class="dropdown icon"></i>
-                    <div class="default text">Gender</div>
-                    <div class="menu">
-                      <div class="item" data-value="male">Male</div>
-                      <div class="item" data-value="female">Female</div>
-                      <div class="item" data-value="other">Other</div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <div class="ui dividing header">
-            Contact information
-        </div>
-        <div class="ui inverted grey basic segment three fields">
-            <div class="required {{errors.has('actor.country')?'error':''}} field">
-                {% partial 'country' label='Country' fieldname='actor[country]' %}
-            </div>
-            <div class="required {{errors.has('actor.city')?'error':''}} field">
-                <label for="actor[city]">City</label>
-                <div class="ui mini input">
-                    <input type="text" name="actor[city]" value="{{form_value('actor.city') }}"/>
-                </div>
-            </div>
-            <div class="{{errors.has('actor.origin_country')?'error':''}} field">
-                {% partial 'country' label='Country of origin' fieldname='actor[origin_country]' %}
-            </div>
-        </div>
-        <div class=" ui inverted grey basic segment four fields">
-            <div class="{{errors.has('actor.email')?'error':''}} field">
-                <label for="actor[email]">Email</label>
-                <input type="text" name="actor[email]" placeholder="Email ..." value="{{form_value('actor.email') }}"/>
-            </div>
-            <div class="{{errors.has('actor.phone')?'error':''}} field">
-                <label for="actor[phone]">Phone</label>
-                <input type="text" name="actor[phone]" placeholder="Phone ..." value="{{form_value('actor.phone') }}"/>
-            </div>
-            <div class="{{errors.has('actor.linkedin')?'error':''}} field">
-                <label for="actor[linkedin]">Linkedin</label>
-                <div class="ui left icon input">
-                    <input type="text" name="actor[linkedin]" placeholder="Linkedin ..." value="{{form_value('actor.linkedin') }}"/>
-                    <i class="linkedin icon"></i>
-                </div>
-            </div>
-            <div class="{{errors.has('actor.website')?'error':''}} field">
-                <label for="actor[website]">Website</label>
-                <div class="ui left icon input">
-                    <input type="text" name="actor[website]" placeholder="Website ..." value="{{form_value('actor.website') }}"/>
-                    <i class="globe icon"></i>
                 </div>
             </div>
         </div>
-        <div class="ui dividing header">
-            About you
-        </div>
-        <div class="ui inverted grey basic segment fluid {{errors.has('actor.description')?'error':''}} field">
-            <label for="actor[description]">Description</label>
-            <textarea name="actor[description]" cols="30" rows="10" placeholder="Tell us more about yourself ..." value="{{form_value('actor.description') }}"></textarea>
-        </div>
-        <div class="ui inverted grey basic segment two field">
-            <div class="{{errors.has('actor.technology')?'error':''}} field">
-                <label for="actor[technology]">Technology</label>
-                <div class="ui selection dropdown">
-                    <input type="hidden" name="actor[technology]" value="{{form_value('actor.technology') }}"/>
-                    <i class="dropdown icon"></i>
-                    <div class="default text">Technology</div>
-                    <div class="menu">
-                      <div class="item" data-value="AI">AI</div>
-                      <div class="item" data-value="Blockchain">Blockchain</div>
-                      <div class="item" data-value="3D printing">3D printing</div>
-                    </div>
-                </div>
-            </div>
-            <div class="{{errors.has('keywords')?'error':''}} field">
-                <label for="keywords">Sectors you work in</label>
-                <div class="ui search multiple selection dropdown">
-                    <input type="hidden" name="keywords" value="{{form_value('keywords') }}"/>
-                    <i class="dropdown icon"></i>
-                    <div class="default text">Sectors</div>
-                    <div class="menu">
-                      {% for keyword in keywords %}
-                        <div class="item" data-value="{{keyword.id}}">{{keyword.keyword}}</div>
-                      {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="field">
-            {% component 'sitecaptcha' %}
-          </div>
-        
-          <div class="{{errors.has('captcha')?'error':''}} field">
-            <label for="pwd">Captcha:</label>
-            <input type="text" name="captcha"/>
-          </div>
-        <br>
-        <button type="submit" class="ui button">Submit</button>
-        <br>
+    </div>
+    <div class="field">
+        {% component 'sitecaptcha' %}
+    </div>
+
+    <div class="{{errors.has('captcha')?'error':''}} field">
+        <label for="pwd">Captcha:</label>
+        <input name="captcha" type="text"/>
+    </div>
+    <br>
+    <button class="ui button" type="submit">Submit</button>
+    <br>
     {{form_close()}}
 </div>
 
 {% put scripts %}
 <script>
-    $(function(){
+    $(function () {
         $('.ui.dropdown').dropdown();
         var name = $('input[name="actor[name]"]').val();
-        name = name.toLowerCase().replaceAll(/[^\w^\s]/g,'').replaceAll(/\s/g,'-');
+        name = name.toLowerCase().replaceAll(/[^\w^\s]/g, '').replaceAll(/\s/g, '-');
         $('input[name="actor[slug]"]').val(name);
         var type = $('input[name="actor[type]"]').val();
-        if(type === 'Individual'){
+        if (type === 'Individual') {
             $('input[name="actor[is_person]"]').val(1);
         }
     })
-    $(document).on('change', 'input[name="actor[name]"]', function(){
+    $(document).on('change', 'input[name="actor[name]"]', function () {
         var name = $(this).val();
-        name = name.toLowerCase().replaceAll(/[^\w^\s]/g,'').replaceAll(/\s/g,'-');
+        name = name.toLowerCase().replaceAll(/[^\w^\s]/g, '').replaceAll(/\s/g, '-');
         $('input[name="actor[slug]"]').val(name);
     });
-    $(document).on('change', 'input[name="actor[type]"]', function(){
+    $(document).on('change', 'input[name="actor[type]"]', function () {
         var type = $('input[name="actor[type]"]').val();
-        if(type === 'Individual'){
+        if (type === 'Individual') {
             $('input[name="actor[is_person]"]').val(1);
         }
     });
-    $(document).on('change', 'input,textarea', function(){
+    $(document).on('change', 'input,textarea', function () {
         $(this).closest('.field').removeClass('error');
     });
 </script>

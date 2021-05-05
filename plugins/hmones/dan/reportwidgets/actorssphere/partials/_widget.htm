@@ -1,0 +1,14 @@
+<div class="report-widget">
+    <h3>Actors by Sphere</h3>
+    <div
+            class="control-chart wrap-legend"
+            data-control="chart-bar"
+            data-full-width="1"
+            data-height="200">
+        <ul>
+            <?php foreach($keywords as $sphere => $keyword):  ?>
+            <li> <?php echo $sphere; ?>  <span><?php echo $keyword->sum('actors_count'); ?></span></li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+</div>

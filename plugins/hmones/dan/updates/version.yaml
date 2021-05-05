@@ -27,3 +27,6 @@
 1.0.10:
     - 'Created table hmones_dan_connection_keyword'
     - builder_table_create_hmones_dan_connection_keyword.php
+1.0.11:
+    - 'Updated table hmones_dan_actors'
+    - builder_table_update_hmones_dan_actors_3.php
